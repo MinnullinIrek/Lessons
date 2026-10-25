@@ -1,4 +1,6 @@
-﻿#include <iostream>  // Для вывода в консоль
+﻿// test 123
+
+#include <iostream>  // Для вывода в консоль
 #include <conio.h>  // Для _kbhit() и _getch() (чтение клавиш без нажатия Enter)
 #include <Windows.h> // Для управления консолью Windows
 
@@ -33,12 +35,23 @@ int main() {
         if (_kbhit()) { // Проверяем, была ли нажата клавиша
             int key = _getch();
             int dx = 0, dy = 0;
+          
+            // Стрелки
+            if (key == 0 || key == 224) {
+                int arrow = _getch(); // читаем второй байт только здесь
+                if (arrow == 72) dy = -1; // Вверх
+                else if (arrow == 80) dy = 1; // Вниз
+                else if (arrow == 75) dx = -1; // Влево
+                else if (arrow == 77) dx = 1; // Вправо  gg
+            }
 
             // WASD
             if (key == 'w' || key == 'W') dy = -1;
             else if (key == 's' || key == 'S') dy = 1;
             else if (key == 'a' || key == 'A') dx = -1;
             else if (key == 'd' || key == 'D') dx = 1;
+
+
 
 
             // Расчет новой позиции
