@@ -52,7 +52,30 @@ void guessNumber()
 
 int main() {
 
+    std::cout << "решение линейного уравнения. введите a \n";
+    double a=0, b=0, c=0;
     
+    std::cin >> a;
+
+    std::cout << "введите b \n";
+    std::cin >> b;
+
+    std::cout << "введите c \n";
+    std::cin >> c;
+
+    double result = linear(a, b, c);
+
+    std::cout << "решение линейного уравнения. резудьтат " << result;
+
+
+
+    // то же самое делаем для квадратичного уравнения
+    // ..
+
+
+    //потом запускаем "угадай число"
+    guessNumber();
+
 
     return 0;
 }
